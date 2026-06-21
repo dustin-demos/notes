@@ -5,8 +5,8 @@
     "start": "make start"
   },
   "dependencies": {
-    "@onclick/pocket": "git+https://github.com/onclick-llc/pocket.git",
-    "@onclick/superstatic": "git+https://github.com/onclick-llc/superstatic.git",
+    "@onclick/pocket": "git+https://github.com/dustin-archive/pocket-2021.git",
+    "@onclick/superstatic": "git+https://github.com/dustin-archive/superstatic.git",
     "@whaaaley/material-icons-scss": "^4.0.3",
     "hast-to-hyperscript": "^10.0.0",
     "mdast-util-from-markdown": "^1.0.0",

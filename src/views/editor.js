@@ -177,11 +177,11 @@ const Editor = (state, dispatch) => {
   const bar = { vnode: null }
 
   const activeMarkdown = state.notes[state.activeNote].markdown
-  const copyLink = location.origin + '/note?data=' + urlSafeCompress.zip(activeMarkdown)
+  const copyLink = location.origin + '/onclick-notes/note?data=' + urlSafeCompress.zip(activeMarkdown)
 
   return div({ class: 'editor' }, [
     div({ class: 'editor-titlebar' }, [
-      Link({ to: '/' }),
+      Link({ to: '/onclick-notes/' }),
       h1([
         text('Onclick Notes'),
         span([

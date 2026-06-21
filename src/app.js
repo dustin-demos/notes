@@ -27,10 +27,11 @@ export const { getState, dispatch } = app({
     }
   },
   pages: {
-    '/': Home,
-    '/editor': Editor,
+    // Served under /onclick-notes/ in the demos container, so routes carry that prefix.
+    '/onclick-notes/': Home,
+    '/onclick-notes/editor': Editor,
     '/missing': Missing,
-    '/note': Note
+    '/onclick-notes/note': Note
   }
 })
 

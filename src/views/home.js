@@ -8,7 +8,7 @@ const Home = (state, dispatch) => {
   return div({ class: 'home' }, [
     div({ class: 'home-main' }, [
       div({ class: 'home-logo' }),
-      Link({ to: '/editor' }, 'Edit my notes')
+      Link({ to: '/onclick-notes/editor' }, 'Edit my notes')
     ])
   ])
 }
