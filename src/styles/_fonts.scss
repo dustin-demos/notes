@@ -13,7 +13,7 @@ $font-inter: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/fonts/Inter-3.18/Inter-roman.var.woff2') format('woff2');
+  src: url('/onclick-notes/fonts/Inter-3.18/Inter-roman.var.woff2') format('woff2');
 }
 
 @font-face {
@@ -21,7 +21,7 @@ $font-inter: 'Inter', sans-serif;
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/fonts/Inter-3.18/Inter-italic.var.woff2') format('woff2');
+  src: url('/onclick-notes/fonts/Inter-3.18/Inter-italic.var.woff2') format('woff2');
 }
 
 /**
@@ -38,7 +38,7 @@ $font-mono: 'Source Code Pro', monospace;
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/fonts/SourceCodePro-1.018/SourceCodePro-roman.var.otf') format('opentype');
+  src: url('/onclick-notes/fonts/SourceCodePro-1.018/SourceCodePro-roman.var.otf') format('opentype');
 }
 
 @font-face {
@@ -46,5 +46,5 @@ $font-mono: 'Source Code Pro', monospace;
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/fonts/SourceCodProe-1.018/SourceCodePro-italic.var.otf') format('opentype');
+  src: url('/onclick-notes/fonts/SourceCodePro-1.018/SourceCodePro-italic.var.otf') format('opentype');
 }

@@ -10,7 +10,9 @@ exports.esbuild = {
   write: false,
   define: {
     'process.env.APP_PROD': production,
-    'process.env.FF_STATIC_RENDER': false
+    'process.env.FF_STATIC_RENDER': false,
+    // Dependencies branch on NODE_ENV; define it so no bare `process` reaches the browser.
+    'process.env.NODE_ENV': JSON.stringify(production ? 'production' : 'development')
   }
 }
 
