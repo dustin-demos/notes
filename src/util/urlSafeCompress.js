@@ -1,27 +1,20 @@
 
 import pako from 'pako'
 
-const toBuffer = data => {
-  const result = []
-
-  for (let i = 0; i < data.length; i++) {
-    result.push(data.charCodeAt(i))
-  }
-
-  return new Uint8Array(result)
-}
+const encoder = new TextEncoder()
+const decoder = new TextDecoder()
 
 export const zip = data => {
-  data = pako.deflateRaw(data) // String => Uint8Array
-  data = String.fromCharCode.apply(null, data) // Uint8Array => String
+  data = pako.deflateRaw(encoder.encode(data)) // String => Uint8Array (deflated)
 
-  return window.btoa(data) // Uint8Array => base64
+  // Swapped window.btoa for the native Uint8Array.toBase64 with the base64url alphabet.
+  // btoa only emits standard base64 (+ and /), which a URL query string mangles; base64url (RFC 4648 section 5) is URL-safe.
+  return data.toBase64({ alphabet: 'base64url', omitPadding: true })
 }
 
 export const unzip = data => {
-  data = window.atob(data) // base64 => String
-  data = toBuffer(data) // String => Uint8Array
-  data = pako.inflateRaw(data) // Uint8Array => Uint8Array
+  // Swapped window.atob for the native Uint8Array.fromBase64 with the base64url alphabet, matching zip.
+  data = Uint8Array.fromBase64(data, { alphabet: 'base64url' })
 
-  return String.fromCharCode.apply(null, data) // Uint8Array => String
+  return decoder.decode(pako.inflateRaw(data)) // Uint8Array (inflated) => String
 }
